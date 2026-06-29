@@ -1,0 +1,1322 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音乐参考链接</title>
+  <style>
+    :root {
+      --bg: #090b0f;
+      --bg-soft: #11151c;
+      --panel: rgba(12, 16, 22, 0.86);
+      --panel-soft: rgba(255, 255, 255, 0.04);
+      --line: rgba(255, 255, 255, 0.12);
+      --line-strong: rgba(255, 255, 255, 0.2);
+      --text: #f3ede3;
+      --soft: #d6cfc2;
+      --muted: #ada597;
+      --subtle: #7c7569;
+      --shadow: 0 28px 80px rgba(0, 0, 0, 0.34);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      color-scheme: dark;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(208, 161, 101, 0.22), transparent 28%),
+        radial-gradient(circle at 88% 14%, rgba(90, 129, 160, 0.16), transparent 24%),
+        radial-gradient(circle at 50% 100%, rgba(190, 119, 86, 0.1), transparent 32%),
+        linear-gradient(180deg, #090b0f 0%, #0d1117 44%, #090b0f 100%);
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    body::before {
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 24px 24px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 92%);
+    }
+
+    body::after {
+      background:
+        linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.03) 45%, transparent 70%);
+      opacity: 0.5;
+      transform: translateX(-18%);
+    }
+
+    a,
+    button {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid rgba(255, 255, 255, 0.9);
+      outline-offset: 4px;
+    }
+
+    .page-shell {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+
+    .hero {
+      position: relative;
+      padding-top: 6px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding-bottom: 26px;
+    }
+
+    .brand-block {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 30% 30%, #f7d9a4 0%, #d7a76a 46%, rgba(215, 167, 106, 0.2) 100%);
+      box-shadow: 0 0 22px rgba(215, 167, 106, 0.55);
+    }
+
+    .brand-text,
+    .eyebrow,
+    .section-kicker,
+    .card-kicker,
+    .panel-kicker,
+    .fact-label,
+    .note-title,
+    .source-label,
+    .link-label {
+      margin: 0;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .brand-text {
+      color: var(--soft);
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--soft);
+      font-size: 13px;
+      white-space: nowrap;
+      backdrop-filter: blur(14px);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.22fr) minmax(320px, 0.78fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .guidance-card,
+    .panel,
+    .page-footer {
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015)),
+        rgba(8, 11, 16, 0.78);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(20px);
+    }
+
+    .hero-copy {
+      padding: clamp(28px, 4vw, 44px);
+      border-radius: calc(var(--radius-xl) + 4px);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-copy::before {
+      content: "";
+      position: absolute;
+      inset: auto auto -110px -80px;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(215, 167, 106, 0.22), transparent 68%);
+      pointer-events: none;
+    }
+
+    .eyebrow,
+    .section-kicker,
+    .card-kicker,
+    .panel-kicker,
+    .fact-label,
+    .note-title,
+    .source-label,
+    .link-label {
+      color: var(--subtle);
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-family: Georgia, "Songti SC", "STSong", serif;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin-top: 12px;
+      font-size: clamp(52px, 8vw, 92px);
+      line-height: 0.92;
+      max-width: 7ch;
+    }
+
+    .intro {
+      max-width: 640px;
+      margin: 22px 0 0;
+      color: var(--soft);
+      font-size: 17px;
+      line-height: 1.9;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .stat-card {
+      min-height: 152px;
+      padding: 20px 18px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: 20px;
+      line-height: 1.35;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .stat-card p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 14px;
+    }
+
+    .guidance-card {
+      border-radius: calc(var(--radius-xl) + 4px);
+      padding: clamp(26px, 4vw, 34px);
+      display: grid;
+      align-content: space-between;
+      gap: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .guidance-card::before {
+      content: "";
+      position: absolute;
+      inset: 18px 18px auto auto;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(97, 140, 172, 0.16), transparent 66%);
+      pointer-events: none;
+    }
+
+    .guidance-card h2 {
+      font-size: clamp(28px, 4.4vw, 48px);
+      line-height: 1.08;
+      max-width: 8ch;
+      margin-top: 10px;
+    }
+
+    .guidance-copy {
+      margin: 14px 0 0;
+      color: var(--soft);
+      line-height: 1.85;
+      font-size: 15px;
+      max-width: 30ch;
+    }
+
+    .guidance-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .guidance-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: start;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .guidance-index {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+
+    .guidance-item p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 14px;
+    }
+
+    .catalog-intro {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.75fr);
+      gap: 24px;
+      align-items: end;
+      margin-top: 42px;
+    }
+
+    .catalog-intro h2 {
+      margin-top: 10px;
+      font-size: clamp(32px, 5vw, 58px);
+      line-height: 1.02;
+    }
+
+    .section-copy {
+      margin: 0;
+      color: var(--soft);
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .tabs {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 22px;
+      padding: 10px;
+      border-radius: 28px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(16px);
+    }
+
+    .tab {
+      min-height: 56px;
+      border: 1px solid transparent;
+      border-radius: 18px;
+      background: transparent;
+      color: var(--subtle);
+      cursor: pointer;
+      font: inherit;
+      font-size: 15px;
+      transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        background 180ms ease,
+        color 180ms ease,
+        box-shadow 180ms ease;
+    }
+
+    .tab:hover {
+      transform: translateY(-1px);
+      color: var(--soft);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .tab[aria-selected="true"] {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.07);
+      border-color: rgba(255, 255, 255, 0.16);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03), 0 16px 28px rgba(0, 0, 0, 0.18);
+    }
+
+    .panels {
+      margin-top: 18px;
+    }
+
+    .panel {
+      --accent: 215, 167, 106;
+      display: none;
+      grid-template-columns: minmax(280px, 0.84fr) minmax(0, 1.16fr);
+      overflow: hidden;
+      border-radius: 34px;
+      position: relative;
+    }
+
+    .panel::before {
+      content: "";
+      position: absolute;
+      right: -120px;
+      top: -120px;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(var(--accent), 0.22), transparent 68%);
+      pointer-events: none;
+    }
+
+    .panel.active {
+      display: grid;
+      animation: panel-enter 320ms ease;
+    }
+
+    @keyframes panel-enter {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .panel-side {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 32px 30px;
+      border-right: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(var(--accent), 0.14), rgba(255, 255, 255, 0) 72%),
+        rgba(255, 255, 255, 0.02);
+    }
+
+    .panel-number {
+      margin-top: 10px;
+      color: rgba(255, 255, 255, 0.12);
+      font-family: Georgia, "Songti SC", serif;
+      font-size: clamp(96px, 15vw, 168px);
+      line-height: 0.82;
+      letter-spacing: -0.05em;
+    }
+
+    .panel-facts {
+      display: grid;
+      gap: 16px;
+    }
+
+    .fact {
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .fact-value {
+      margin: 8px 0 0;
+      color: var(--soft);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .panel-main {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 28px;
+      padding: clamp(28px, 4vw, 44px);
+    }
+
+    .panel-heading {
+      display: grid;
+      gap: 18px;
+    }
+
+    .panel-heading h3 {
+      max-width: 12ch;
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 1.04;
+    }
+
+    .summary {
+      max-width: 760px;
+      margin: 0;
+      color: var(--soft);
+      font-size: 17px;
+      line-height: 1.9;
+    }
+
+    .panel-notes {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .note-card {
+      padding: 22px 22px 20px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.035);
+      min-height: 152px;
+    }
+
+    .note-title {
+      color: rgb(var(--accent));
+    }
+
+    .note-card p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(var(--accent), 0.28);
+      background: rgba(var(--accent), 0.12);
+      color: var(--text);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .panel-actions {
+      display: flex;
+      align-items: stretch;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .primary-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 22px;
+      border-radius: 999px;
+      background: rgb(var(--accent));
+      color: #0b0c0f;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+      box-shadow: 0 18px 34px rgba(var(--accent), 0.22);
+    }
+
+    .primary-link:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.04);
+    }
+
+    .source-box {
+      flex: 1 1 360px;
+      min-height: 54px;
+      padding: 14px 16px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+      display: grid;
+      gap: 8px;
+      align-content: center;
+    }
+
+    .source-url {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+      overflow-wrap: anywhere;
+      font-family: "SFMono-Regular", "Menlo", "Consolas", monospace;
+    }
+
+    .panel-loose .panel-heading h3 {
+      max-width: none;
+    }
+
+    .note-card.wide {
+      min-height: auto;
+    }
+
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .loose-link {
+      display: grid;
+      gap: 12px;
+      padding: 20px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.035);
+      color: var(--text);
+      text-decoration: none;
+      transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        background 180ms ease,
+        box-shadow 180ms ease;
+    }
+
+    .loose-link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 18px 30px rgba(0, 0, 0, 0.16);
+    }
+
+    .loose-link strong {
+      font-size: 18px;
+      line-height: 1.45;
+      font-weight: 600;
+    }
+
+    .loose-link p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .link-url {
+      color: var(--subtle);
+      font-size: 12px;
+      line-height: 1.6;
+      overflow-wrap: anywhere;
+      font-family: "SFMono-Regular", "Menlo", "Consolas", monospace;
+    }
+
+    .page-footer {
+      margin-top: 18px;
+      padding: 18px 22px;
+      border-radius: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .page-footer p {
+      margin: 0;
+    }
+
+    .panel-valiant {
+      --accent: 197, 147, 97;
+    }
+
+    .panel-ender {
+      --accent: 132, 173, 176;
+    }
+
+    .panel-power {
+      --accent: 219, 174, 97;
+    }
+
+    .panel-violet {
+      --accent: 149, 161, 198;
+    }
+
+    .panel-disco {
+      --accent: 201, 113, 84;
+    }
+
+    .panel-loose {
+      --accent: 216, 204, 167;
+    }
+
+    @media (max-width: 1100px) {
+      .hero-stats,
+      .tabs,
+      .link-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 900px) {
+      .page {
+        width: min(1180px, calc(100% - 28px));
+        padding-bottom: 40px;
+      }
+
+      .topbar,
+      .catalog-intro,
+      .hero-grid,
+      .panel.active,
+      .page-footer {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .topbar {
+        display: grid;
+      }
+
+      .hero-grid,
+      .catalog-intro {
+        gap: 18px;
+      }
+
+      .hero-copy,
+      .guidance-card {
+        border-radius: 28px;
+      }
+
+      .panel-side {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .panel-heading h3 {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        width: min(1180px, calc(100% - 20px));
+        padding-top: 18px;
+      }
+
+      .hero-stats,
+      .tabs,
+      .panel-notes,
+      .link-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .brand-text,
+      .eyebrow,
+      .section-kicker,
+      .card-kicker,
+      .panel-kicker,
+      .fact-label,
+      .note-title,
+      .source-label,
+      .link-label {
+        letter-spacing: 0.12em;
+      }
+
+      .panel {
+        border-radius: 28px;
+      }
+
+      .panel-side,
+      .panel-main,
+      .hero-copy,
+      .guidance-card {
+        padding: 22px;
+      }
+
+      .page-footer {
+        padding: 16px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <main class="page">
+      <header class="hero">
+        <div class="topbar">
+          <div class="brand-block">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <p class="brand-text">音乐参考板</p>
+          </div>
+          <div class="status-pill">内部讨论版 · 更新于 2026-06-26</div>
+        </div>
+
+        <div class="hero-grid">
+          <section class="hero-copy" aria-labelledby="page-title">
+            <p class="eyebrow">主参考与补充散链统一整理</p>
+            <h1 id="page-title">音乐参考链接</h1>
+            <p class="intro">
+              把原本分散的 B 站与网易云入口收束成一个更适合提案和情绪对齐的页面。
+              功能保持不变，重点放在视觉层次、中文表达和展示气质上，让它更像一份可以直接拿去开会的参考稿。
+            </p>
+
+            <div class="hero-stats">
+              <article class="stat-card">
+                <strong>5 组主参考</strong>
+                <p>优先走 B 站入口，适合会议里快速共听，也更方便按段落感受整体情绪走势。</p>
+              </article>
+              <article class="stat-card">
+                <strong>1 组补充归档</strong>
+                <p>零散网易云链接先按用途备注留档，不和主参考混在一起，后续更容易二次拆分。</p>
+              </article>
+              <article class="stat-card">
+                <strong>即开即用</strong>
+                <p>保留原有跳转方式和标签切换逻辑，只提升页面观感、信息结构与中文文案的专业度。</p>
+              </article>
+            </div>
+          </section>
+
+          <aside class="guidance-card" aria-labelledby="guide-title">
+            <div>
+              <p class="card-kicker">使用建议</p>
+              <h2 id="guide-title">先用主参考对齐气质，再用散链补细节。</h2>
+              <p class="guidance-copy">
+                这页更适合在讨论中快速打开、快速判断。先建立共同的情绪坐标，再进入更细的流程或角色拆分，会比直接听散链更高效。
+              </p>
+            </div>
+
+            <div class="guidance-list">
+              <div class="guidance-item">
+                <span class="guidance-index">01</span>
+                <p>先听《勇敢的心》《紫罗兰》《极乐迪斯科》，把“温柔沉重”“优雅抒情”“低温荒凉”三条主轴定下来。</p>
+              </div>
+              <div class="guidance-item">
+                <span class="guidance-index">02</span>
+                <p>再用《终焉之莉莉》补“圣洁与污染并置”的方向，用《音乐的力量》补叙事方法和群体共鸣。</p>
+              </div>
+              <div class="guidance-item">
+                <span class="guidance-index">03</span>
+                <p>如果进入流程细拆，直接切到“网易云补充归档”，按梦境、逃跑、战争版本和唱诗班等标签继续细听。</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </header>
+
+      <section class="catalog-intro">
+        <div>
+          <p class="section-kicker">参考目录</p>
+          <h2>主参考入口</h2>
+        </div>
+        <p class="section-copy">
+          每一组都补充了“适合拿来参考什么”和“建议关注点”，避免页面只剩裸链接，方便直接转给同事，
+          也方便在会里快速判断这首音乐到底该被拿来参考哪一部分。
+        </p>
+      </section>
+
+      <nav class="tabs" role="tablist" aria-label="音乐参考">
+        <button class="tab" role="tab" aria-selected="true" aria-controls="valiant" id="tab-valiant" tabindex="0">勇敢的心</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="ender" id="tab-ender" tabindex="-1">终焉之莉莉</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="power" id="tab-power" tabindex="-1">音乐的力量</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="violet" id="tab-violet" tabindex="-1">紫罗兰</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="disco" id="tab-disco" tabindex="-1">极乐迪斯科</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="loose" id="tab-loose" tabindex="-1">网易云散链</button>
+      </nav>
+
+      <section class="panels">
+        <section class="panel panel-valiant active" role="tabpanel" id="valiant" aria-labelledby="tab-valiant">
+          <div class="panel-side">
+            <div>
+              <p class="panel-kicker">主参考 01</p>
+              <div class="panel-number">01</div>
+            </div>
+
+            <div class="panel-facts">
+              <article class="fact">
+                <p class="fact-label">情绪定位</p>
+                <p class="fact-value">温柔但沉重的战争记忆</p>
+              </article>
+              <article class="fact">
+                <p class="fact-label">建议用途</p>
+                <p class="fact-value">战争回望、角色创伤、过场结尾的余韵处理</p>
+              </article>
+              <article class="fact">
+                <p class="fact-label">听感重点</p>
+                <p class="fact-value">小编制、克制旋律、被压低的情绪重量</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="panel-main">
+            <div class="panel-heading">
+              <h3>《勇敢的心：世界大战》游戏原声</h3>
+              <p class="summary">
+                这组原声不是高昂的英雄史诗，而是用更克制的方式书写战争记忆。
+                它适合拿来参考“平静表面下的失去感”，也适合帮助团队快速理解什么叫温柔、沉静、却并不轻的悲伤。
+              </p>
+            </div>
+
+            <div class="panel-notes">
+              <article class="note-card">
+                <p class="note-title">适合抓取的质感</p>
+                <p>像在翻看已经尘封的信件与照片，情绪是旧的、慢的、被压低的，却一直有重量。</p>
+              </article>
+              <article class="note-card">
+                <p class="note-title">建议关注点</p>
+                <p>重点听它如何用简单旋律维持情绪浓度，几乎不靠夸张编制硬推煽情，特别适合作为“克制型战争段落”的参照。</p>
+              </article>
+            </div>
+
+            <div class="tags" aria-label="标签">
+              <span class="tag">战争记忆</span>
+              <span class="tag">叙事感</span>
+              <span class="tag">温柔哀伤</span>
+            </div>
+
+            <div class="panel-actions">
+              <a class="primary-link" href="https://www.bilibili.com/video/BV1ax411b7R3/" target="_blank" rel="noreferrer">打开 B 站参考</a>
+              <div class="source-box">
+                <p class="source-label">原始链接</p>
+                <p class="source-url">https://www.bilibili.com/video/BV1ax411b7R3/</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel panel-ender" role="tabpanel" id="ender" aria-labelledby="tab-ender" hidden>
+          <div class="panel-side">
+            <div>
+              <p class="panel-kicker">主参考 02</p>
+              <div class="panel-number">02</div>
+            </div>
+
+            <div class="panel-facts">
+              <article class="fact">
+                <p class="fact-label">情绪定位</p>
+                <p class="fact-value">圣洁与污染并置的暗色诗意</p>
+              </article>
+              <article class="fact">
+                <p class="fact-label">建议用途</p>
+                <p class="fact-value">梦境、废墟、少女或灵性角色的氛围建立</p>
+              </article>
+              <article class="fact">
+                <p class="fact-label">听感重点</p>
+                <p class="fact-value">钢琴、女声、残败感与轻微宗教性</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="panel-main">
+            <div class="panel-heading">
+              <h3>《终焉之莉莉》原声音轨合集入口</h3>
+              <p class="summary">
+                这组参考最大的价值，是它能很快建立“被污染的纯净”这种审美方向。
+                既有光，也有腐蚀感，适合那些不能只用“黑暗”或者“空灵”简单概括的段落。
+              </p>
+            </div>
+
+            <div class="panel-notes">
+              <article class="note-card">
+                <p class="note-title">适合抓取的质感</p>
+                <p>不是单纯的阴冷，而是仍然保留一点神性和柔软；不是空灵，而是已经被侵蚀过的空灵。</p>
+              </article>
+              <article class="note-card">
+                <p class="note-title">建议关注点</p>
+                <p>留意钢琴与女声之间的距离感，它很适合给梦境、净化与堕落并存的流程寻找更准确的听感参照。</p>
+              </article>
+            </div>
+
+            <div class="tags" aria-label="标签">
+              <span class="tag">钢琴</span>
+              <span class="tag">女声</span>
+              <span class="tag">暗色诗意</span>
+            </div>
+
+            <div class="panel-actions">
+              <a class="primary-link" href="https://www.bilibili.com/video/BV1xW4y1p71r/" target="_blank" rel="noreferrer">打开 B 站参考</a>
+              <div class="source-box">
+                <p class="source-label">原始链接</p>
+                <p class="source-url">https://www.bilibili.com/video/BV1xW4y1p71r/</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel panel-power" role="tabpanel" id="power" aria-labelledby="tab-power" hidden>
+          <div class="panel-side">
+            <div>
+              <p class="panel-kicker">主参考 03</p>
+              <div class="panel-number">03</div>
+            </div>
+
+            <div class="panel-facts">
+              <article class="fact">
+                <p class="fact-label">情绪定位</p>
+                <p class="fact-value">由旋律推动关系变化的叙事样本</p>
+              </article>
+              <article class="fact">
+                <p class="fact-label">建议用途</p>
+                <p class="fact-value">品牌影片、群像关系、冲突转连接的情绪推进</p>
+              </article>
+              <article class="fact">
+                <p class="fact-label">听感重点</p>
+                <p class="fact-value">熟悉旋律、集体共鸣、叙事上的转折触发</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="panel-main">
+            <div class="panel-heading">
+              <h3>网易云音乐品牌影片《音乐的力量》</h3>
+              <p class="summary">
+                这条参考更偏“叙事方法”而不是单纯的音乐风格样本。
+                它有价值的地方在于：一段熟悉旋律如何打通人和人之间的距离，进而让情绪从冲突转向理解与连接。
+              </p>
+            </div>
+
+            <div class="panel-notes">
+              <article class="note-card">
+                <p class="note-title">适合抓取的质感</p>
+                <p>群体记忆、共同哼唱、熟悉旋律带来的情绪回路，尤其适合“关系被音乐重新点亮”的故事结构。</p>
+              </article>
+              <article class="note-card">
+                <p class="note-title">建议关注点</p>
+                <p>如果你要做品牌片或群像关系线，可以重点留意它怎么用同一条旋律承接人物转变，而不是只把音乐当背景。</p>
+              </article>
+            </div>
+
+            <div class="tags" aria-label="标签">
+              <span class="tag">品牌影片</span>
+              <span class="tag">群体共鸣</span>
+              <span class="tag">关系修复</span>
+            </div>
+
+            <div class="panel-actions">
+              <a class="primary-link" href="https://www.bilibili.com/video/BV1194y157Da/" target="_blank" rel="noreferrer">打开 B 站参考</a>
+              <div class="source-box">
+                <p class="source-label">原始链接</p>
+                <p class="source-url">https://www.bilibili.com/video/BV1194y157Da/</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel panel-violet" role="tabpanel" id="violet" aria-labelledby="tab-violet" hidden>
+          <div class="panel-side">
+            <div>
+              <p class="panel-kicker">主参考 04</p>
+              <div class="panel-number">04</div>
+            </div>
+
+            <div class="panel-facts">
+              <article class="fact">
+                <p class="fact-label">情绪定位</p>
+                <p class="fact-value">优雅、透明、带文学气质的抒情线</p>
+              </article>
+              <article class="fact">
+                <p class="fact-label">建议用途</p>
+                <p class="fact-value">信件、告白、回忆、人物独白等细腻情感段落</p>
+              </article>
+              <article class="fact">
+                <p class="fact-label">听感重点</p>
+                <p class="fact-value">弦乐与钢琴的呼吸感、留白感和情绪精度</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="panel-main">
+            <div class="panel-heading">
+              <h3>《紫罗兰永恒花园》原声入口</h3>
+              <p class="summary">
+                这组参考适合拿来对齐“有文学气质的温柔”。
+                它的情绪不是直接扑出来的，而是通过弦乐与钢琴的呼吸、停顿与留白慢慢展开，非常适合情感精度要求高的段落。
+              </p>
+            </div>
+
+            <div class="panel-notes">
+              <article class="note-card">
+                <p class="note-title">适合抓取的质感</p>
+                <p>轻、透、缓慢展开，不靠堆砌情绪，而是靠细小的声部变化和空气感去托住人物内心。</p>
+              </article>
+              <article class="note-card">
+                <p class="note-title">建议关注点</p>
+                <p>特别适合信件、告白、回忆、人物独白等场景。如果你要的是“温柔但不甜腻”，这条参考很稳。</p>
+              </article>
+            </div>
+
+            <div class="tags" aria-label="标签">
+              <span class="tag">弦乐</span>
+              <span class="tag">钢琴</span>
+              <span class="tag">文学气质</span>
+            </div>
+
+            <div class="panel-actions">
+              <a class="primary-link" href="https://www.bilibili.com/video/BV1yASBBBE9E/" target="_blank" rel="noreferrer">打开 B 站参考</a>
+              <div class="source-box">
+                <p class="source-label">原始链接</p>
+                <p class="source-url">https://www.bilibili.com/video/BV1yASBBBE9E/</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel panel-disco" role="tabpanel" id="disco" aria-labelledby="tab-disco" hidden>
+          <div class="panel-side">
+            <div>
+              <p class="panel-kicker">主参考 05</p>
+              <div class="panel-number">05</div>
+            </div>
+
+            <div class="panel-facts">
+              <article class="fact">
+                <p class="fact-label">情绪定位</p>
+                <p class="fact-value">低温、荒凉、带政治废墟感的内心独白</p>
+              </article>
+              <article class="fact">
+                <p class="fact-label">建议用途</p>
+                <p class="fact-value">战争余波、城市衰败、意识流和角色内耗</p>
+              </article>
+              <article class="fact">
+                <p class="fact-label">听感重点</p>
+                <p class="fact-value">空旷空间感、冷色音景、疲惫却未停止的流动</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="panel-main">
+            <div class="panel-heading">
+              <h3>《极乐迪斯科》原声入口</h3>
+              <p class="summary">
+                这组参考适合搭建“时代已经崩了，但人物仍然要往前走”的精神空间。
+                它不是简单的阴郁，而是社会背景、城市残响和人物内耗共同作用后的迟钝与荒凉。
+              </p>
+            </div>
+
+            <div class="panel-notes">
+              <article class="note-card">
+                <p class="note-title">适合抓取的质感</p>
+                <p>像风吹过空建筑留下的回声，像角色在废墟和政治余波里独自思考，冷但不空，慢但不死。</p>
+              </article>
+              <article class="note-card">
+                <p class="note-title">建议关注点</p>
+                <p>如果你想做“城市疲惫”“战争余波”“精神消耗”这样的段落，这条参考能帮你把氛围拉到更具体的位置。</p>
+              </article>
+            </div>
+
+            <div class="tags" aria-label="标签">
+              <span class="tag">荒凉</span>
+              <span class="tag">城市废墟</span>
+              <span class="tag">内心独白</span>
+            </div>
+
+            <div class="panel-actions">
+              <a class="primary-link" href="https://www.bilibili.com/video/BV1w7411k7V2/" target="_blank" rel="noreferrer">打开 B 站参考</a>
+              <div class="source-box">
+                <p class="source-label">原始链接</p>
+                <p class="source-url">https://www.bilibili.com/video/BV1w7411k7V2/</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel panel-loose" role="tabpanel" id="loose" aria-labelledby="tab-loose" hidden>
+          <div class="panel-side">
+            <div>
+              <p class="panel-kicker">补充归档 06</p>
+              <div class="panel-number">06</div>
+            </div>
+
+            <div class="panel-facts">
+              <article class="fact">
+                <p class="fact-label">情绪定位</p>
+                <p class="fact-value">暂不并入主参考的补充音源归档</p>
+              </article>
+              <article class="fact">
+                <p class="fact-label">建议用途</p>
+                <p class="fact-value">梦境、逃跑、战争版本、唱诗班等流程细拆</p>
+              </article>
+              <article class="fact">
+                <p class="fact-label">整理原则</p>
+                <p class="fact-value">先保留语义备注，等脚本更清楚后再按角色和流程继续细分</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="panel-main">
+            <div class="panel-heading">
+              <h3>网易云补充归档</h3>
+              <p class="summary">
+                这里先不强行并入主参考，而是把零散但有用的素材按用途备注保留下来。
+                当整体方向已经确定以后，可以直接从这里继续往梦境、逃跑、战争版本或仪式感方向补细节。
+              </p>
+            </div>
+
+            <div class="panel-notes">
+              <article class="note-card wide">
+                <p class="note-title">后续建议</p>
+                <p>如果这页还会继续扩充，建议把“梦境”“逃跑”“战争版本”“唱诗班”四个方向各自拆成独立二级页，这样会比继续往同一页里堆散链更专业。</p>
+              </article>
+              <article class="note-card wide">
+                <p class="note-title">使用方式</p>
+                <p>主参考用于定方向，补充归档用于找细节。这样既不会让会议里信息过载，也能保留你当前整理时写下来的判断线索。</p>
+              </article>
+            </div>
+
+            <div class="link-grid">
+              <a class="loose-link" href="https://music.163.com/song?id=2605226144&userid=263908694" target="_blank" rel="noreferrer">
+                <p class="link-label">梦境流程</p>
+                <strong>梦境感 / 梅塔相关流程</strong>
+                <p>这首整体更偏梦境和漂浮感，适合放在梅塔相关流程里继续判断是否能做情绪延展。</p>
+                <span class="link-url">https://music.163.com/song?id=2605226144&userid=263908694</span>
+              </a>
+
+              <a class="loose-link" href="https://music.163.com/song?id=2611226700&userid=263908694" target="_blank" rel="noreferrer">
+                <p class="link-label">逃跑流程</p>
+                <strong>音色设计 / 逃跑流程</strong>
+                <p>更有意思的是音色本身，适合和语音节奏、逃跑段落的压迫感一起放着看有没有新的切法。</p>
+                <span class="link-url">https://music.163.com/song?id=2611226700&userid=263908694</span>
+              </a>
+
+              <a class="loose-link" href="https://music.163.com/album?id=277533540&userid=263908694" target="_blank" rel="noreferrer">
+                <p class="link-label">战争版本</p>
+                <strong>1999 战争相关版本 OST</strong>
+                <p>专辑入口，适合整体感受战争版本的氛围区间，后续如果要拆章节可以从这里继续往下筛。</p>
+                <span class="link-url">https://music.163.com/album?id=277533540&userid=263908694</span>
+              </a>
+
+              <a class="loose-link" href="https://music.163.com/song?id=2723776139&userid=263908694" target="_blank" rel="noreferrer">
+                <p class="link-label">战争版本</p>
+                <strong>1999 战争相关版本歌曲</strong>
+                <p>单曲入口，更适合快速定位某一首的具体气质，不必每次都从整张专辑开始听。</p>
+                <span class="link-url">https://music.163.com/song?id=2723776139&userid=263908694</span>
+              </a>
+
+              <a class="loose-link" href="https://music.163.com/album?id=156507488&userid=263908694" target="_blank" rel="noreferrer">
+                <p class="link-label">战争题材</p>
+                <strong>极乐迪斯科战争题材 OST</strong>
+                <p>适合和上面的《极乐迪斯科》主参考交叉听，判断更偏主氛围还是更偏战争余波的情绪侧。</p>
+                <span class="link-url">https://music.163.com/album?id=156507488&userid=263908694</span>
+              </a>
+
+              <a class="loose-link" href="https://music.163.com/song?id=2118755650&userid=263908694" target="_blank" rel="noreferrer">
+                <p class="link-label">仪式感</p>
+                <strong>唱诗班 / 圣咏质感</strong>
+                <p>更适合作为圣洁、仪式、群体声场方向的补充参考，尤其适合需要“庄严但不空泛”的段落。</p>
+                <span class="link-url">https://music.163.com/song?id=2118755650&userid=263908694</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <footer class="page-footer">
+        <p>本页仅作内部参考索引，版权与播放可用性以原平台页面为准。</p>
+        <p>建议优先在桌面端使用；移动端已适配基础浏览与跳转。</p>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    (() => {
+      const tabs = Array.from(document.querySelectorAll(".tab"));
+      const panels = Array.from(document.querySelectorAll(".panel"));
+
+      function activatePanel(panelId, options = {}) {
+        const { focus = false, updateHash = true } = options;
+
+        tabs.forEach((tab) => {
+          const isActive = tab.getAttribute("aria-controls") === panelId;
+          tab.setAttribute("aria-selected", String(isActive));
+          tab.tabIndex = isActive ? 0 : -1;
+          if (focus && isActive) {
+            tab.focus();
+          }
+        });
+
+        panels.forEach((panel) => {
+          const isActive = panel.id === panelId;
+          panel.classList.toggle("active", isActive);
+          panel.hidden = !isActive;
+        });
+
+        if (updateHash) {
+          history.replaceState(null, "", `#${panelId}`);
+        }
+      }
+
+      function moveFocus(currentIndex, step) {
+        const total = tabs.length;
+        const nextIndex = (currentIndex + step + total) % total;
+        const nextTab = tabs[nextIndex];
+        activatePanel(nextTab.getAttribute("aria-controls"), { focus: true });
+      }
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => {
+          activatePanel(tab.getAttribute("aria-controls"));
+        });
+
+        tab.addEventListener("keydown", (event) => {
+          if (event.key === "ArrowRight") {
+            event.preventDefault();
+            moveFocus(index, 1);
+          } else if (event.key === "ArrowLeft") {
+            event.preventDefault();
+            moveFocus(index, -1);
+          } else if (event.key === "Home") {
+            event.preventDefault();
+            activatePanel(tabs[0].getAttribute("aria-controls"), { focus: true });
+          } else if (event.key === "End") {
+            event.preventDefault();
+            activatePanel(tabs[tabs.length - 1].getAttribute("aria-controls"), { focus: true });
+          }
+        });
+      });
+
+      const initialPanel = window.location.hash.slice(1);
+      const defaultPanel = tabs[0].getAttribute("aria-controls");
+      const targetPanel = panels.some((panel) => panel.id === initialPanel) ? initialPanel : defaultPanel;
+      activatePanel(targetPanel, { updateHash: false });
+    })();
+  </script>
+</body>
+</html>
