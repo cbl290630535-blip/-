@@ -348,7 +348,7 @@
 
     .tabs {
       display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
+      grid-template-columns: repeat(7, minmax(0, 1fr));
       gap: 10px;
       margin-top: 22px;
       padding: 10px;
@@ -684,6 +684,10 @@
       --accent: 201, 113, 84;
     }
 
+    .panel-adpiano {
+      --accent: 151, 183, 133;
+    }
+
     .panel-loose {
       --accent: 216, 204, 167;
     }
@@ -787,7 +791,7 @@
             <span class="brand-mark" aria-hidden="true"></span>
             <p class="brand-text">音乐参考板</p>
           </div>
-          <div class="status-pill">内部讨论版 · 更新于 2026-06-26</div>
+          <div class="status-pill">内部讨论版 · 更新于 2026-07-01</div>
         </div>
 
         <div class="hero-grid">
@@ -801,7 +805,7 @@
 
             <div class="hero-stats">
               <article class="stat-card">
-                <strong>5 组主参考</strong>
+                <strong>6 组主参考</strong>
                 <p>优先走 B 站入口，适合会议里快速共听，也更方便按段落感受整体情绪走势。</p>
               </article>
               <article class="stat-card">
@@ -859,6 +863,7 @@
         <button class="tab" role="tab" aria-selected="false" aria-controls="power" id="tab-power" tabindex="-1">音乐的力量</button>
         <button class="tab" role="tab" aria-selected="false" aria-controls="violet" id="tab-violet" tabindex="-1">紫罗兰</button>
         <button class="tab" role="tab" aria-selected="false" aria-controls="disco" id="tab-disco" tabindex="-1">极乐迪斯科</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="adpiano" id="tab-adpiano" tabindex="-1">AD:PIANO</button>
         <button class="tab" role="tab" aria-selected="false" aria-controls="loose" id="tab-loose" tabindex="-1">网易云散链</button>
       </nav>
 
@@ -1158,11 +1163,70 @@
           </div>
         </section>
 
+        <section class="panel panel-adpiano" role="tabpanel" id="adpiano" aria-labelledby="tab-adpiano" hidden>
+          <div class="panel-side">
+            <div>
+              <p class="panel-kicker">主参考 06</p>
+              <div class="panel-number">06</div>
+            </div>
+
+            <div class="panel-facts">
+              <article class="fact">
+                <p class="fact-label">情绪定位</p>
+                <p class="fact-value">明亮、克制、带一点电子流动感的钢琴线</p>
+              </article>
+              <article class="fact">
+                <p class="fact-label">建议用途</p>
+                <p class="fact-value">回忆、轻微释然、角色独处和过场呼吸段落</p>
+              </article>
+              <article class="fact">
+                <p class="fact-label">听感重点</p>
+                <p class="fact-value">钢琴主题、清透音色、节奏推进和空间感</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="panel-main">
+            <div class="panel-heading">
+              <h3>AD:PIANO IX -Alt- / When You Were Here</h3>
+              <p class="summary">
+                这条指向第 10P「ARForest - When You Were Here」。
+                它适合补一个更清透、更有流动感的钢琴参考，不像战争或废墟类参考那么沉，而是更偏记忆被轻轻推开的状态。
+              </p>
+            </div>
+
+            <div class="panel-notes">
+              <article class="note-card">
+                <p class="note-title">适合抓取的质感</p>
+                <p>钢琴线比较干净，电子质感让情绪保持流动，适合作为“没有完全释然，但已经开始往前走”的段落参考。</p>
+              </article>
+              <article class="note-card">
+                <p class="note-title">建议关注点</p>
+                <p>重点听它如何在明亮和克制之间保持平衡，可以用来补充更轻、更透明的情绪层，而不是继续加重悲伤。</p>
+              </article>
+            </div>
+
+            <div class="tags" aria-label="标签">
+              <span class="tag">钢琴</span>
+              <span class="tag">清透</span>
+              <span class="tag">流动感</span>
+            </div>
+
+            <div class="panel-actions">
+              <a class="primary-link" href="https://www.bilibili.com/video/BV1x14y1G7XM?spm_id_from=333.788.videopod.episodes&amp;vd_source=a04fdcda3711d7c9712f64416916716a&amp;p=10" target="_blank" rel="noreferrer">打开 B 站参考</a>
+              <div class="source-box">
+                <p class="source-label">原始链接</p>
+                <p class="source-url">https://www.bilibili.com/video/BV1x14y1G7XM?spm_id_from=333.788.videopod.episodes&amp;vd_source=a04fdcda3711d7c9712f64416916716a&amp;p=10</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section class="panel panel-loose" role="tabpanel" id="loose" aria-labelledby="tab-loose" hidden>
           <div class="panel-side">
             <div>
-              <p class="panel-kicker">补充归档 06</p>
-              <div class="panel-number">06</div>
+              <p class="panel-kicker">补充归档 07</p>
+              <div class="panel-number">07</div>
             </div>
 
             <div class="panel-facts">

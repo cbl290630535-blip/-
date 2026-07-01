@@ -39,6 +39,12 @@ const bilibiliEntries = [
     source: 'Bilibili',
     url: 'https://www.bilibili.com/video/BV1C77L6ZEgd?spm_id_from=333.788.videopod.episodes&vd_source=a04fdcda3711d7c9712f64416916716a&p=26',
   },
+  {
+    title: 'AD:PIANO IX -Alt-',
+    note: 'P10 · ARForest - When You Were Here',
+    source: 'Bilibili',
+    url: 'https://www.bilibili.com/video/BV1x14y1G7XM?spm_id_from=333.788.videopod.episodes&vd_source=a04fdcda3711d7c9712f64416916716a&p=10',
+  },
 ];
 
 const neteaseGroups = [
@@ -228,7 +234,7 @@ function PrimaryArchive({ onReferencesOpen }: { onReferencesOpen: () => void }) 
             </div>
           </div>
 
-          <div className="flex min-w-0 flex-1 gap-2 overflow-x-auto pb-1 sm:grid sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-3 2xl:grid-cols-6">
+          <div className="flex min-w-0 flex-1 gap-2 overflow-x-auto pb-1 sm:grid sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-3 2xl:grid-cols-7">
             {bilibiliEntries.map((entry, index) => (
               <motion.a
                 key={entry.url}
